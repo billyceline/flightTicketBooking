@@ -4,6 +4,7 @@ public class flightInfoBean{
 	private String Flight_no;
 	private String Origin;
 	private String Destination;
+	private String Date;
 	private String Departure_time;
 	private String Arrival_time;
 	private String Duration;
@@ -65,6 +66,13 @@ public class flightInfoBean{
 	}
 	public void setRemain_ticket_no(int Remain_ticket_no) {
 		this.Remain_ticket_no = Remain_ticket_no;
+	}
+	
+	public String getDate() {
+		return Date;
+	}
+	public void setDate(String Date) {
+		this.Date = Date;
 	}
 
 
