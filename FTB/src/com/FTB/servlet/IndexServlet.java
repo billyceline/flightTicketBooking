@@ -38,8 +38,7 @@ public class IndexServlet extends HttpServlet {
 		date = new String(date.getBytes("ISO-8859-1"),"utf-8");
 		System.out.println("origin="+origin);
 		System.out.println("destination="+destination);
-		System.out.println("date="+date);
-		
+		System.out.println("date="+date);		
 		SearchLogical sl = new SearchLogical();
 		ArrayList SFIList = sl.searchFlightInfoList(origin,destination,date);
 		

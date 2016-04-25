@@ -17,7 +17,7 @@ public class SearchLogical{
 		ResultSet rs = null;
 		flightInfoBean fib = null;
 		ArrayList SFIList = new ArrayList();
-		String sql = "select * from FlightInfo where ";
+		String sql = "select * from flightinfo where ";
 		sql = sql + "Origin='π„÷›'";
 		System.out.println(sql);
 		try {

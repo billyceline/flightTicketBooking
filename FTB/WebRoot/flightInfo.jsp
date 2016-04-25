@@ -101,6 +101,7 @@
                     	<td>Flight_no</td>
                         <td>Origin</td>
                         <td>Destination</td>
+                        <td>Date</td>
                         <td>Departure_time</td>
                         <td>Arrival_time</td>
                         <td>Duration</td>
@@ -122,6 +123,7 @@
         <td><%=cb.getFlight_no() %></td>
     	<td><%=cb.getOrigin() %></td>
     	<td><%=cb.getDestination() %></td>
+    	<td><%=cb.getDate() %></td>
     	<td><%=cb.getDeparture_time() %></td>
     	<td><%=cb.getArrival_time() %></td>
     	<td><%=cb.getDuration() %></td>

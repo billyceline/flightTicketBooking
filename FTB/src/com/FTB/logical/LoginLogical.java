@@ -24,7 +24,7 @@ public class LoginLogical {
 		Connection con = DBConnection.getConnection();//获取数据库的链接对象
 		String sql = "select user_id from customers where ";
 		sql = sql + "user_id='" + userId + "' and password='" + password + "'";
-		
+		System.out.println(sql);
 		Statement stm = null;
 		
 		try {
