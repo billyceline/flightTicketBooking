@@ -27,16 +27,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
   <div style = " margin: 70 auto; position: relative;">
+  <form action="IndexServlet" >
   <table>
   <tr>
   <td>Origin：</td>
-  <td><input type="text" class="cityinput" id="citySelect" value="CityName"></td>
+  <td><input type="text" class="cityinput" id="citySelect" name="origin" value="CityName"></td>
   <td>Destination：</td>
-  <td><input type="text" class="cityinput" id="citySelect1" value="CityName"></td>
+  <td><input type="text" class="cityinput" id="citySelect1" name= "destination" value="CityName"></td>
   </tr>
   <tr>
   <td>Date：</td>
-  <td><input value="Please Input Date" class="laydate-icon" onclick="laydate()"></td>
+  <td><input value="Please Input Date" class="laydate-icon" name= "date" onclick="laydate()"></td>
   </tr>
   <tr>
   <td></td>
@@ -44,7 +45,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <td></td>
   <td><input id = "SearchBtn" type = "submit" class = "" value = "Search"></td>
   </tr>
-  </table>    
+  </table> 
+  </form>   
   </div>    
 <br><br>
 
