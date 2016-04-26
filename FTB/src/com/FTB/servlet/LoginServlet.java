@@ -31,10 +31,8 @@ public class LoginServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		String user_id = request.getParameter("user_id");
-		String password = request.getParameter("password");
-		System.out.println("user_id1=" + user_id);
+		String password = request.getParameter("password");		
 		user_id = new String(user_id.getBytes("ISO-8859-1"),"utf-8");
-		System.out.println("user_id2=" + user_id);
 		
 		LoginLogical ll = new LoginLogical();
 		boolean rt = ll.checkUser(user_id,password);

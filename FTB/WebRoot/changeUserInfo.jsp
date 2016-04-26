@@ -18,7 +18,7 @@
       </ul>
     </div>
     <div>
-    <form action="LoginServlet" >
+    <form action="UpdateServlet" >
     <table>
     <tr>
             	<td style ="color:white"> Name:  </td>

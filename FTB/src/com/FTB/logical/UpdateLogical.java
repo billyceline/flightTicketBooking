@@ -21,25 +21,24 @@ public class UpdateLogical{
 		// TODO Auto-generated method stub
 		Connection con = DBConnection.getConnection();
 		Statement stm = null;
-		ResultSet rs = null;
+		int rs = 0;
 		flightInfoBean fib = null;
 		ArrayList SFIList = new ArrayList();
-		String sql = "update customers set name='"+Name+"', identification_no='"+ID_number+"', birthday='"+Birthday+"', gender='"+Gender+"', email='"+Email+"' where user_id='"+user_id+"'";
+		String sql = "update customers set name='"+Name+"', identification_no="+ID_number+", birthday='"+Birthday+"', gender='"+Gender+"', email='"+Email+"' where user_id='"+user_id+"'";
 		System.out.println(sql);
 		try {
 			stm = con.createStatement();
-			rs = stm.executeQuery(sql);
+			rs = stm.executeUpdate(sql);
+			System.out.println("rs="+rs);
+			if(rs>0)
+			return true;
 			
-			if(rs.next()){
-				return true;
-			}else{
-				return false;
-			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return false;
 		}
-		
 		return false;
+		
 	}
 }

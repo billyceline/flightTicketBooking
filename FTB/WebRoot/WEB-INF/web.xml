@@ -9,12 +9,6 @@
   <servlet>
     <description>This is the description of my J2EE component</description>
     <display-name>This is the display name of my J2EE component</display-name>
-    <servlet-name>flightInfoBean</servlet-name>
-    <servlet-class>com.FTB.bean.flightInfoBean</servlet-class>
-  </servlet>
-  <servlet>
-    <description>This is the description of my J2EE component</description>
-    <display-name>This is the display name of my J2EE component</display-name>
     <servlet-name>FlightInfoServlet</servlet-name>
     <servlet-class>com.FTB.servlet.FlightInfoServlet</servlet-class>
   </servlet>
@@ -27,21 +21,10 @@
   <servlet>
     <description>This is the description of my J2EE component</description>
     <display-name>This is the display name of my J2EE component</display-name>
-    <servlet-name>SearchLogical</servlet-name>
-    <servlet-class>com.FTB.logical.SearchLogical</servlet-class>
-  </servlet>
-  <servlet>
-    <description>This is the description of my J2EE component</description>
-    <display-name>This is the display name of my J2EE component</display-name>
     <servlet-name>UpdateServlet</servlet-name>
     <servlet-class>com.FTB.servlet.UpdateServlet</servlet-class>
   </servlet>
-  <servlet>
-    <description>This is the description of my J2EE component</description>
-    <display-name>This is the display name of my J2EE component</display-name>
-    <servlet-name>UpdateLogical</servlet-name>
-    <servlet-class>com.FTB.logical.UpdateLogical</servlet-class>
-  </servlet>
+
 
 
 
@@ -53,10 +36,7 @@
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/LoginServlet</url-pattern>
   </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>flightInfoBean</servlet-name>
-    <url-pattern>/flightInfoBean</url-pattern>
-  </servlet-mapping>
+
   <servlet-mapping>
     <servlet-name>FlightInfoServlet</servlet-name>
     <url-pattern>/FlightInfoServlet</url-pattern>
@@ -65,18 +45,13 @@
     <servlet-name>IndexServlet</servlet-name>
     <url-pattern>/IndexServlet</url-pattern>
   </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>SearchLogical</servlet-name>
-    <url-pattern>/SearchLogical</url-pattern>
-  </servlet-mapping>
+
+
   <servlet-mapping>
     <servlet-name>UpdateServlet</servlet-name>
     <url-pattern>/UpdateServlet</url-pattern>
   </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>UpdateLogical</servlet-name>
-    <url-pattern>/UpdateLogical</url-pattern>
-  </servlet-mapping>
+
   
   <welcome-file-list>
     <welcome-file>Login.jsp</welcome-file>

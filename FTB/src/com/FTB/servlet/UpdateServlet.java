@@ -53,11 +53,11 @@ public class UpdateServlet extends HttpServlet {
 		boolean rt = ul.UpdateCustomerInfo(user_id,Name,Gender,Birthday,ID_number,Email);
 		
 		if(rt){
-			request.getSession().setAttribute("user_id", user_id);
-			request.getRequestDispatcher("changePasswd.jsp").forward(request, response);
+			request.setAttribute("fInfo", "Update successful!!");
+			request.getRequestDispatcher("changeUserInfo.jsp").forward(request, response);
 		}else{
 			request.setAttribute("fInfo", "Failed!!");
-			request.getRequestDispatcher("changePasswd.jsp").forward(request, response);
+			request.getRequestDispatcher("changeUserInfo.jsp").forward(request, response);
 		}
 		
 	}
