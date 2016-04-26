@@ -11,7 +11,7 @@ public class DBConnection {
 		
 		String userName="root";
 		String password="";
-		String url="jdbc:mysql://localhost:3306/ftb";
+		String url="jdbc:mysql://localhost:3306/ftb?useUnicode=true&characterEncoding=UTF-8";
 		Connection con = null;
 		
 		try {

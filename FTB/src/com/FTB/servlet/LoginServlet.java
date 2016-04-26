@@ -40,12 +40,11 @@ public class LoginServlet extends HttpServlet {
 		boolean rt = ll.checkUser(user_id,password);
 		
 		if(rt){
-			request.getSession().setAttribute("user_id", user_id);//±£´æµÇÂ¼³É¹¦ID
+			request.getSession().setAttribute("user_id", user_id);//set login id
 			response.sendRedirect("FlightInfoServlet");
 		}else{
 			request.setAttribute("rInfo", "The username/password is wrong!!");
 			request.getRequestDispatcher("login.jsp").forward(request, response);
-			//response.sendRedirect("login.jsp");
 		}
 		
 	}

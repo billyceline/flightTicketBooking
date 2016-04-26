@@ -32,8 +32,8 @@
             <tr></tr>
             <tr> 
             	<td></td>
-                <td><input id = "resetBtn" type = "button" class = "" value = "reset"></td>
-                <td><input id = "confirmBtn" type = "button" class = "" value = "confirm"></td>
+                <td><input id = "resetBtn" type = "reset" class = "" value = "reset"></td>
+                <td><input id = "confirmBtn" type = "submit" class = "" value = "confirm"></td>
                 
         </table>
     </div>

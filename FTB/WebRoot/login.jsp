@@ -7,12 +7,10 @@
 <title>login</title>
 </head>
 <link rel="stylesheet" href="bootstrap.css">
-<body
-	style = "background: url(001.jpg) ; background-repeat: repeat">
-	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"
-    	style = "width: 1000px; height: 600px; margin: 0 auto; position: relative;">
+<body style = "background: url(001.jpg) ;">
+	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" ">
     	<form action="LoginServlet" onSubmit="return checkUser();">
-        <table border = "0" cellspacing = "10" style = "position:absolute; left:620px; top:230px;">
+        <table >
     		<tr>
     			<td colspan="2" style="color: red;font-size:24px">
     			<%

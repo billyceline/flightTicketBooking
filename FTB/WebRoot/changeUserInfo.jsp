@@ -18,44 +18,48 @@
       </ul>
     </div>
     <div>
+    <form action="LoginServlet" >
     <table>
     <tr>
             	<td style ="color:white"> Name:  </td>
-				<td> <input id = "txtLoginID" type = "text" class = "textbox" value ="" ></td>               
+				<td> <input name = "Name" type = "text" class = "textbox" value ="" ></td>               
             </tr>
             
+            
             <tr>
-            	<td style ="color:white"> Age:  </td>
-                <td> <input id = "txtPassWord" type = "text" class = "textbox" value =""></td>
-                
-            </tr>
-            <tr>
-            	<td style ="color:white"> Sex:  </td>
-				<td> <input id = "txtLoginID" type = "text" class = "textbox" value ="" ></td>               
+            	<td style ="color:white"> Gender:  </td>
+				<td> <input name = "Gender" type = "text" class = "textbox" value ="" ></td>               
             </tr>
             
             <tr>
             	<td style ="color:white"> Birthday:  </td>
-                <td> <input id = "txtPassWord" type = "text" class = "textbox" value =""></td>
+                <td> <input name = "Birthday" type = "text" class = "textbox" value =""></td>
                 
             </tr>
             <tr>
             	<td style ="color:white"> ID number:  </td>
-                <td> <input id = "txtPassWord" type = "text" class = "textbox" value =""></td>
+                <td> <input name = "ID_number" type = "text" class = "textbox" value =""></td>
                 
             </tr>
             <tr>
             	<td style ="color:white"> Email:  </td>
-                <td> <input id = "txtPassWord" type = "text" class = "textbox" value =""></td>
+                <td> <input name = "Email" type = "text" class = "textbox" value =""><%
+    				if(request.getAttribute("fInfo") != null){
+    			%>
+    					<%=request.getAttribute("fInfo") %>
+    			<%
+    				}
+    			%></td>
                 
             </tr>
             <tr></tr>
             <tr> 
             	<td></td>
-                <td><input id = "resetBtn" type = "button" class = "" value = "reset"></td>
-                <td><input id = "confirmBtn" type = "button" class = "" value = "confirm"></td>
+                <td><input id = "resetBtn" type = "reset" class = "" value = "reset" style="width: 78px; "></td>
+                <td><input id = "confirmBtn" type = "submit" class = "" value = "confirm" style="width: 78px; "></td>
                 
         </table>
+        </form>
     </div>
 </body>
 </html>
