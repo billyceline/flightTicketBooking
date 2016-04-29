@@ -12,7 +12,7 @@
 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="flightInfo.jsp">Booking <span class="sr-only">(current)</span></a> </li>
-        <li><a href="orders.jsp">Orders</a> </li>
+        <li><a href="${pageContext.request.contextPath}/OrderServlet">Orders</a> </li>
         <li><a href="changeUserInfo.jsp">ChangeUserInfo</a> </li>
         <li><a href="changePasswd.jsp">ChangePassword</a> </li>
       </ul>

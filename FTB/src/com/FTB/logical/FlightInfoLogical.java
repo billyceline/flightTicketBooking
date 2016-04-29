@@ -24,6 +24,7 @@ public class FlightInfoLogical{
 			rs = stm.executeQuery(sql);
 			while(rs.next()){
 				fib = new flightInfoBean();
+				fib.setInfoId(rs.getInt("infoId"));
 				fib.setFlight_no(rs.getString("Flight_no"));
 				fib.setOrigin(rs.getString("Origin"));
 				fib.setDestination(rs.getString("Destination"));

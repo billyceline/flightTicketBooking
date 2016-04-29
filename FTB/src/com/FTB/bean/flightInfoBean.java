@@ -1,6 +1,7 @@
 package com.FTB.bean;
 
 public class flightInfoBean{
+	private int infoId;
 	private String Flight_no;
 	private String Origin;
 	private String Destination;
@@ -10,6 +11,13 @@ public class flightInfoBean{
 	private String Duration;
 	private float Price;
 	private int Remain_ticket_no;
+	
+	public int getInfoId() {
+		return infoId;
+	}
+	public void setInfoId(int infoId) {
+		this.infoId = infoId;
+	}
 	
 	public String getFlight_no() {
 		return Flight_no;

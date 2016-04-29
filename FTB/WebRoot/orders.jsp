@@ -1,5 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" import="java.util.*,com.FTB.bean.flightInfoBean,com.FTB.bean.OrderInfoBean,com.FTB.bean.UserInfoBean"  pageEncoding="utf-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
@@ -11,8 +14,8 @@
 <body style = "background: url(001.jpg) ; background-repeat: repeat">
 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="flightInfo.jsp">Booking <span class="sr-only">(current)</span></a> </li>
-        <li><a href="orders.jsp">Orders</a> </li>
+        <li class="active"><a href="index.jsp">Booking <span class="sr-only">(current)</span></a> </li>
+        <li><a href="${pageContext.request.contextPath}/OrderServlet">Orders</a> </li>
         <li><a href="changeUserInfo.jsp">ChangeUserInfo</a> </li>
         <li><a href="changePasswd.jsp">ChangePassword</a> </li>
       </ul>
@@ -21,9 +24,12 @@
         	<div style="font-size:20px">
             	Your orders are as follows:
             </div>
+            <form action = "DeleteOrderServlet">
                 <table style="width:80%">
-                	<tr>
-                    	<td>Index</td>
+                	<tr>                		
+                		<td>Name</td>
+                		<td>Gender</td>
+                		<td>Identification_no</td>                 
                     	<td>Flight_no</td>
                         <td>Origin</td>
                         <td>Destination</td>
@@ -32,22 +38,44 @@
                         <td>Arrival_time</td>
                         <td>Duration</td>
                         <td>Price</td>
-                        <td>Remain_ticket_amount</td>
+                        <td>Status</td>                      
                     </tr>
-                    <tr>
-                    	<td>Index</td>
-                    	<td>Flight_no</td>
-                        <td>Origin</td>
-                        <td>Destination</td>
-                        <td>Departure_date</td>
-                        <td>Departure_time</td>
-                        <td>Arrival_time</td>
-                        <td>Duration</td>
-                        <td>Price</td>
-                        <td>Remain_ticket_amount</td>
-                    </tr>
+                     <%                     
+    ArrayList oList = (ArrayList)request.getAttribute("OrderInfoList");
+    ArrayList fList = (ArrayList)request.getAttribute("FlightInfoList");
+    ArrayList uList = (ArrayList)request.getAttribute("UserInfoList");
+    if(oList != null){
+    	OrderInfoBean oib = null;
+    	flightInfoBean fib = null; 
+    	UserInfoBean uib = null;   	
+    	for(int i=0;i<oList.size();i++){
+    		oib = (OrderInfoBean)oList.get(i);
+    		fib = (flightInfoBean)fList.get(i);
+    		uib = (UserInfoBean)uList.get(i);    	
+    %>
+                    <tr>                    	
+                    	<td><%=uib.getName() %></td>
+                		<td><%=uib.getGender() %></td>
+                		<td><%=uib.getIdentification_no() %></td>                                         
+                    	<td><%=fib.getFlight_no() %></td>
+                    	<td><%=fib.getOrigin() %></td>
+    					<td><%=fib.getDestination() %></td>
+    					<td><%=fib.getDate() %></td>
+    					<td><%=fib.getDeparture_time() %></td>
+    					<td><%=fib.getArrival_time() %></td>
+    					<td><%=fib.getDuration() %></td>
+    					<td><%=fib.getPrice() %></td>
+    					<td><%=oib.getStatus() %></td>
+    					<td><input name="orders" id="orders" type="checkbox" value="<%=oib.getOrderId() %>" /></td>
+    				</tr>
+    			<%		
+    				}
+    			}
+    			%>
+                  <tr><input id = "DeleteBtn" type = "submit" class = "" value = "Delete"></tr> 
                     
                 </table>
+                </form>
     </div>
 </body>
 </html>
