@@ -1,4 +1,4 @@
-package com.FTB.servlet;
+package com.FTB.AdminServlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.FTB.logical.LoginLogical;
 
-public class LoginServlet extends HttpServlet {
+public class LoginAdminServlet extends HttpServlet {
 
 	/**
 	 * The doGet method of the servlet. <br>
@@ -35,14 +35,14 @@ public class LoginServlet extends HttpServlet {
 		user_id = new String(user_id.getBytes("ISO-8859-1"),"utf-8");
 		
 		LoginLogical ll = new LoginLogical();
-		boolean rt = ll.checkUser(user_id,password);
+		boolean rt = ll.checkAdmin(user_id,password);
 		
 		if(rt){
 			request.getSession().setAttribute("user_id", user_id);//set login id
-			response.sendRedirect("index.jsp");
+			response.sendRedirect("FlightInfoServlet");
 		}else{
 			request.setAttribute("rInfo", "The username/password is wrong!!");
-			request.getRequestDispatcher("login.jsp").forward(request, response);
+			request.getRequestDispatcher("adminLogin.jsp").forward(request, response);
 		}
 		
 	}

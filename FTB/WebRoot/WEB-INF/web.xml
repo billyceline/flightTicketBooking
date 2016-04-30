@@ -10,7 +10,7 @@
     <description>This is the description of my J2EE component</description>
     <display-name>This is the display name of my J2EE component</display-name>
     <servlet-name>FlightInfoServlet</servlet-name>
-    <servlet-class>com.FTB.servlet.FlightInfoServlet</servlet-class>
+    <servlet-class>com.FTB.AdminServlet.FlightInfoServlet</servlet-class>
   </servlet>
   <servlet>
     <description>This is the description of my J2EE component</description>
@@ -42,6 +42,48 @@
     <servlet-name>CreateOrderServlet</servlet-name>
     <servlet-class>com.FTB.servlet.CreateOrderServlet</servlet-class>
   </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ChangePasswdServlet</servlet-name>
+    <servlet-class>com.FTB.servlet.ChangePasswdServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>LoginAdminServlet</servlet-name>
+    <servlet-class>com.FTB.AdminServlet.LoginAdminServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetAllOrdersServlet</servlet-name>
+    <servlet-class>com.FTB.AdminServlet.GetAllOrdersServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DeleteFlightServlet</servlet-name>
+    <servlet-class>com.FTB.AdminServlet.DeleteFlightServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AddFlightServlet</servlet-name>
+    <servlet-class>com.FTB.AdminServlet.AddFlightServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UpdateFlightServlet</servlet-name>
+    <servlet-class>com.FTB.AdminServlet.UpdateFlightServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+
 
 
 
@@ -76,6 +118,30 @@
   <servlet-mapping>
     <servlet-name>CreateOrderServlet</servlet-name>
     <url-pattern>/CreateOrderServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ChangePasswdServlet</servlet-name>
+    <url-pattern>/ChangePasswdServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoginAdminServlet</servlet-name>
+    <url-pattern>/LoginAdminServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetAllOrdersServlet</servlet-name>
+    <url-pattern>/GetAllOrdersServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeleteFlightServlet</servlet-name>
+    <url-pattern>/DeleteFlightServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddFlightServlet</servlet-name>
+    <url-pattern>/AddFlightServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateFlightServlet</servlet-name>
+    <url-pattern>/UpdateFlightServlet</url-pattern>
   </servlet-mapping>
 
   <welcome-file-list>

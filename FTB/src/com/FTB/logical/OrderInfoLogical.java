@@ -48,7 +48,7 @@ public class OrderInfoLogical{
 				fib.setDeparture_time(rs.getString("Departure_time"));
 				fib.setArrival_time(rs.getString("Arrival_time"));
 				fib.setDuration(rs.getString("Duration"));
-				fib.setPrice(rs.getFloat("Price"));
+				fib.setPrice(rs.getInt("Price"));
 				fib.setRemain_ticket_no(rs.getInt("Remain_ticket_no"));
 				fList.add(fib);
 				
@@ -130,5 +130,67 @@ public class OrderInfoLogical{
 		}
 		return false;
 		
+	}
+	
+	public ArrayList getAllOrderInfoList() {//for admin
+		// TODO Auto-generated method stub
+		Connection con = DBConnection.getConnection();
+		Statement stm = null;
+		ResultSet rs = null;
+		OrderInfoBean oib = null;
+		flightInfoBean fib = null;
+		UserInfoBean uib = null;
+		ArrayList oList = new ArrayList();
+		ArrayList fList = new ArrayList();
+		ArrayList uList = new ArrayList();
+		String sql = "select * from orders,flightinfo,customers where orders.infoId=flightinfo.infoId and customers.user_id=orders.user_id ";		
+		try {
+			stm = con.createStatement();
+			rs = stm.executeQuery(sql);
+			while(rs.next()){
+				oib = new OrderInfoBean();
+				oib.setOrderId(rs.getInt("order_id"));
+				oib.setStatus(rs.getString("status"));
+				oList.add(oib);
+				
+				fib = new flightInfoBean();
+				fib.setFlight_no(rs.getString("Flight_no"));
+				fib.setOrigin(rs.getString("Origin"));
+				fib.setDestination(rs.getString("Destination"));
+				fib.setDate(rs.getString("Date"));
+				fib.setDeparture_time(rs.getString("Departure_time"));
+				fib.setArrival_time(rs.getString("Arrival_time"));
+				fib.setDuration(rs.getString("Duration"));
+				fib.setPrice(rs.getInt("Price"));
+				fib.setRemain_ticket_no(rs.getInt("Remain_ticket_no"));
+				fList.add(fib);
+				
+				uib = new UserInfoBean();
+				uib.setBirthday(rs.getString("birthday"));
+				uib.setName(rs.getString("name"));
+				uib.setIdentification_no(rs.getInt("identification_no"));
+				uib.setGender(rs.getString("gender"));
+				uib.setEmail(rs.getString("email"));
+				uList.add(uib);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			try{
+				rs.close();
+				stm.close();
+				con.close();
+			}catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		ArrayList ALLList = new ArrayList();
+		ALLList.add(oList);
+		ALLList.add(fList);
+		ALLList.add(uList);
+		
+		return ALLList;
 	}
 }

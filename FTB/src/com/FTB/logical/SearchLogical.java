@@ -33,7 +33,7 @@ public class SearchLogical{
 				fib.setDeparture_time(rs.getString("Departure_time"));
 				fib.setArrival_time(rs.getString("Arrival_time"));
 				fib.setDuration(rs.getString("Duration"));
-				fib.setPrice(rs.getFloat("Price"));
+				fib.setPrice(rs.getInt("Price"));
 				fib.setRemain_ticket_no(rs.getInt("Remain_ticket_no"));
 				SFIList.add(fib);
 			}

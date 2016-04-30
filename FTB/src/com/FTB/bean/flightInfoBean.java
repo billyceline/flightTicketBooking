@@ -9,7 +9,7 @@ public class flightInfoBean{
 	private String Departure_time;
 	private String Arrival_time;
 	private String Duration;
-	private float Price;
+	private int Price;
 	private int Remain_ticket_no;
 	
 	public int getInfoId() {
@@ -62,10 +62,10 @@ public class flightInfoBean{
 	}
 	
 	
-	public float getPrice() {
+	public int getPrice() {
 		return Price;
 	}
-	public void setPrice(float Price) {
+	public void setPrice(int Price) {
 		this.Price = Price;
 	}
 	

@@ -13,7 +13,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link rel="stylesheet" href="bootstrap.css">
 <body style = "background: url(001.jpg) ;">
 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" ">
-    	<form action="LoginServlet" onSubmit="return checkUser();">
+    	<form action="LoginAdminServlet" onSubmit="return checkUser();">
         <table >
     		<tr>
     			<td colspan="2" style="color: red;font-size:24px">

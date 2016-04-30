@@ -8,9 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.FTB.logical.LoginLogical;
+import com.FTB.logical.UpdateLogical;
 
-public class LoginServlet extends HttpServlet {
+public class ChangePasswdServlet extends HttpServlet {
 
 	/**
 	 * The doGet method of the servlet. <br>
@@ -29,20 +29,21 @@ public class LoginServlet extends HttpServlet {
 	}
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		String user_id = request.getParameter("user_id");
-		String password = request.getParameter("password");		
+		String user_id = (String)request.getSession().getAttribute("user_id");
+		//System.out.println("userid = "+user_id);
+		String password = request.getParameter("txtPassWord");
+		//String user_id = request.getAttribute("user_id");
 		user_id = new String(user_id.getBytes("ISO-8859-1"),"utf-8");
 		
-		LoginLogical ll = new LoginLogical();
-		boolean rt = ll.checkUser(user_id,password);
+		UpdateLogical ul = new UpdateLogical();
+		boolean rt = ul.UpdatePasswd(user_id,password);
 		
 		if(rt){
-			request.getSession().setAttribute("user_id", user_id);//set login id
-			response.sendRedirect("index.jsp");
+			request.setAttribute("fInfo", "Update successful!!");
+			request.getRequestDispatcher("changePasswd.jsp").forward(request, response);
 		}else{
-			request.setAttribute("rInfo", "The username/password is wrong!!");
-			request.getRequestDispatcher("login.jsp").forward(request, response);
+			request.setAttribute("fInfo", "Failed!!");
+			request.getRequestDispatcher("changePasswd.jsp").forward(request, response);
 		}
 		
 	}

@@ -41,4 +41,29 @@ public class UpdateLogical{
 		return false;
 		
 	}
+	
+	public boolean UpdatePasswd(String user_id,String password) {
+		// TODO Auto-generated method stub
+		Connection con = DBConnection.getConnection();
+		Statement stm = null;
+		int rs = 0;
+		flightInfoBean fib = null;
+		ArrayList SFIList = new ArrayList();
+		String sql = "update customers set password='"+password+"' where user_id='"+user_id+"'";
+		System.out.println(sql);
+		try {
+			stm = con.createStatement();
+			rs = stm.executeUpdate(sql);
+			//System.out.println("rs="+rs);
+			if(rs>0)
+			return true;
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+		return false;
+		
+	}
 }
