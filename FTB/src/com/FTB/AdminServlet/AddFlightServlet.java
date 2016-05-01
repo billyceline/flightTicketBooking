@@ -34,6 +34,12 @@ public class AddFlightServlet extends HttpServlet {
 		String remain_ticket_s = request.getParameter("remain_ticket");
 		int price = Integer.parseInt(price_s);
 		int remain_ticket = Integer.parseInt(remain_ticket_s);
+		flight_no = new String(flight_no.getBytes("ISO-8859-1"),"utf-8");
+		origin = new String(origin.getBytes("ISO-8859-1"),"utf-8");
+		destination = new String(destination.getBytes("ISO-8859-1"),"utf-8");
+		flight_no = new String(flight_no.getBytes("ISO-8859-1"),"utf-8");
+		
+		
 		FlightInfoLogical fil = new FlightInfoLogical();
 		Boolean result = fil.AddFlightInfo(flight_no,origin,destination,date,departure_time,arrival_time,duration,price,remain_ticket);
 		if(result){

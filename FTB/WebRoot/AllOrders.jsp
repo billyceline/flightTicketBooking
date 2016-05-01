@@ -15,6 +15,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="${pageContext.request.contextPath}/FlightInfoServlet">FlightsInfo <span class="sr-only">(current)</span></a> </li>
+		<li><a href="UpdateFlights.jsp">UpdateFlight</a> </li>
         <li><a href="${pageContext.request.contextPath}/GetAllOrdersServlet">Orders</a> </li>
       </ul>
     </div>

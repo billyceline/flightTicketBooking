@@ -60,7 +60,7 @@ public class FlightInfoLogical {
 		flightInfoBean fib = null;
 		String sql = "delete from flightinfo where infoId=" + infoId[0];
 		for (int i = 1; i < infoId.length; i++) {
-			sql = sql + " or order_id=" + infoId[i];
+			sql = sql + " or infoId=" + infoId[i];
 			// System.out.println(sql);
 		}
 		try {
@@ -102,23 +102,22 @@ public class FlightInfoLogical {
 
 	}
 
-	public boolean UpdateCustomerInfo(String user_id, String Name,
-			String Gender, String Birthday, int ID_number, String Email) {
+	public boolean UpdateFlightInfo(int infoId,String flight_no, String origin, String destination,String date,String departure_time,String arrival_time,String duration,int price,int remain_ticket_no) {
 		// TODO Auto-generated method stub
 		Connection con = DBConnection.getConnection();
 		Statement stm = null;
 		int rs = 0;
 		flightInfoBean fib = null;
 		ArrayList SFIList = new ArrayList();
-		String sql = "update customers set name='" + Name
-				+ "', identification_no=" + ID_number + ", birthday='"
-				+ Birthday + "', gender='" + Gender + "', email='" + Email
-				+ "' where user_id='" + user_id + "'";
+		String sql = "update flightinfo set Flight_no='" + flight_no
+				+ "', Origin='" + origin + "', Destination='"
+				+ destination + "', Date='" + date + "', Departure_time='" + departure_time+"',Arrival_time='"+arrival_time+"',Duration='"+duration+"',Price="+price+",Remain_ticket_no="+remain_ticket_no
+				+ " where infoId=" + infoId;
 		System.out.println(sql);
 		try {
 			stm = con.createStatement();
 			rs = stm.executeUpdate(sql);
-			System.out.println("rs=" + rs);
+			//System.out.println("rs=" + rs);
 			if (rs > 0)
 				return true;
 
